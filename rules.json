@@ -1,3 +1,4 @@
+
 [
   {
     "id": 1,
@@ -5,7 +6,10 @@
     "action": { "type": "block" },
     "condition": {
       "urlFilter": "||doubleclick.net^",
-      "resourceTypes": ["script", "image", "sub_frame", "xmlhttprequest", "media"]
+      "resourceTypes": [
+        "script", "image", "sub_frame",
+        "xmlhttprequest", "media", "ping"
+      ]
     }
   },
   {
@@ -14,7 +18,10 @@
     "action": { "type": "block" },
     "condition": {
       "urlFilter": "||googlesyndication.com^",
-      "resourceTypes": ["script", "image", "sub_frame", "xmlhttprequest", "media"]
+      "resourceTypes": [
+        "script", "image", "sub_frame",
+        "xmlhttprequest", "media", "ping"
+      ]
     }
   },
   {
@@ -22,8 +29,14 @@
     "priority": 1,
     "action": { "type": "block" },
     "condition": {
-      "urlFilter": "||adservice.google.*^",
-      "resourceTypes": ["script", "image", "sub_frame", "xmlhttprequest", "media"]
+      "requestDomains": [
+        "adservice.google.com",
+        "googleadservices.com"
+      ],
+      "resourceTypes": [
+        "script", "image", "sub_frame",
+        "xmlhttprequest", "media", "ping"
+      ]
     }
   },
   {
@@ -32,7 +45,113 @@
     "action": { "type": "block" },
     "condition": {
       "urlFilter": "||popads.net^",
-      "resourceTypes": ["script", "sub_frame", "main_frame"]
+      "resourceTypes": [
+        "script", "sub_frame", "xmlhttprequest"
+      ]
+    }
+  },
+  {
+    "id": 5,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "requestDomains": [
+        "adnxs.com",
+        "rubiconproject.com",
+        "pubmatic.com",
+        "openx.net",
+        "casalemedia.com",
+        "bidswitch.net",
+        "indexww.com",
+        "contextweb.com",
+        "smartadserver.com",
+        "adform.net",
+        "3lift.com",
+        "triplelift.com",
+        "yieldmo.com",
+        "sharethrough.com"
+      ],
+      "domainType": "thirdParty",
+      "resourceTypes": [
+        "script", "image", "sub_frame",
+        "xmlhttprequest", "media", "ping"
+      ]
+    }
+  },
+  {
+    "id": 6,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "requestDomains": [
+        "criteo.com",
+        "criteo.net",
+        "adsrvr.org",
+        "advertising.com",
+        "amazon-adsystem.com",
+        "media.net",
+        "teads.tv",
+        "lijit.com"
+      ],
+      "domainType": "thirdParty",
+      "resourceTypes": [
+        "script", "image", "sub_frame",
+        "xmlhttprequest", "media", "ping"
+      ]
+    }
+  },
+  {
+    "id": 7,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "requestDomains": [
+        "taboola.com",
+        "outbrain.com",
+        "mgid.com",
+        "revcontent.com"
+      ],
+      "domainType": "thirdParty",
+      "resourceTypes": [
+        "script", "image", "sub_frame",
+        "xmlhttprequest", "media", "ping"
+      ]
+    }
+  },
+  {
+    "id": 8,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "requestDomains": [
+        "popcash.net",
+        "onclickads.net",
+        "propellerads.com"
+      ],
+      "domainType": "thirdParty",
+      "resourceTypes": [
+        "script", "image", "sub_frame",
+        "xmlhttprequest", "media", "ping"
+      ]
+    }
+  },
+  {
+    "id": 9,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "requestDomains": [
+        "adsafeprotected.com",
+        "advertising.com",
+        "sovrn.com",
+        "spotxchange.com",
+        "spotx.tv"
+      ],
+      "domainType": "thirdParty",
+      "resourceTypes": [
+        "script", "image", "sub_frame",
+        "xmlhttprequest", "media", "ping"
+      ]
     }
   }
 ]

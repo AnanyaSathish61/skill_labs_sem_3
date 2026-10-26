@@ -1,0 +1,11 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>LocalShield · Activity & XAI explanations</title><link rel="stylesheet" href="history.css"></head>
+<body><main>
+<header><div><h1>⬡ LocalShield · Activity Log</h1><p>What was blocked, by which rule, and what the URL model observed.</p></div><button id="clearBtn" class="danger">Clear History</button></header>
+<section class="summary"><div class="metric"><b id="networkCount">0</b><span>Network ads</span></div><div class="metric"><b id="popupCount">0</b><span>Popups</span></div><div class="metric"><b id="reviewCount">0</b><span>AI review flags (not blocked)</span></div></section>
+<section class="toolbar"><input id="search" placeholder="Search domain, URL or explanation" aria-label="Search activity"><select id="filter" aria-label="Filter activity"><option value="all">All activity</option><option value="ad">Blocked network ads</option><option value="popup">Blocked popups</option><option value="download">Blocked downloads</option><option value="ai-review">AI review flags</option><option value="video-skip">Video ad skips</option></select></section>
+<div id="count" class="count"></div>
+<div class="scroll"><table><thead><tr><th>Time</th><th>Type</th><th>Blocked URL / Page</th><th>Why blocked / flagged</th><th>Explainable AI</th></tr></thead><tbody id="rows"></tbody></table><div id="empty" class="empty" hidden>No matching activity yet.</div></div>
+<section class="note"><strong>Important:</strong> Ads are blocked by Chrome filtering rules, not by AI. The ML score describes phishing-like URL text patterns and is <em>not</em> proof of malware or a reason to block an ad. AI review flags never automatically block navigation. Activity history stores up to 500 entries and removes URL query strings/fragments for privacy. Only unpacked Chrome extensions can log network matches via <code>onRuleMatchedDebug</code>.</section>
+</main><script src="history.js"></script></body></html>

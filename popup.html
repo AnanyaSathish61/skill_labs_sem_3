@@ -1,37 +1,34 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   <title>LocalShield</title>
   <link rel="stylesheet" href="popup.css">
 </head>
 <body>
-  <div class="header">
-    <span class="title">LocalShield</span>
-    <button id="closeBtn" class="close-btn" title="Close UI">&times;</button>
-  </div>
-
-  <div class="power-container">
-    <button id="powerBtn" class="power-btn active" title="Toggle AdBlock ON/OFF">
-      <svg viewBox="0 0 24 24" width="36" height="36" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M18.36 6.64a9 9 0 1 1-12.73 0"></path>
-        <line x1="12" y1="2" x2="12" y2="12"></line>
-      </svg>
-    </button>
-    <span id="statusText" class="status-text">PROTECTED</span>
-  </div>
-
-  <div class="stats-container">
-    <div class="stat-box">
-      <span id="adsBlockedCount" class="stat-number">0</span>
-      <span class="stat-label">Ads Blocked</span>
-    </div>
-    <div class="stat-box">
-      <span id="popupsBlockedCount" class="stat-number">0</span>
-      <span class="stat-label">Pop-ups Blocked</span>
-    </div>
-  </div>
-
+  <main>
+    <header class="header">
+      <div class="brand">
+        <span class="shield" aria-hidden="true">⬡</span>
+        <strong>LocalShield</strong>
+      </div>
+      <button id="powerBtn" class="status-pill active" title="Toggle LocalShield" aria-label="Toggle LocalShield">
+        <span id="statusText">Protected</span>
+      </button>
+    </header>
+    <section class="stats-container">
+      <div class="stat-box"><div id="adsBlockedCount" class="stat-number">0</div><div class="stat-label">Ads blocked</div></div>
+      <div class="stat-box"><div id="popupsBlockedCount" class="stat-number">0</div><div class="stat-label">Pop-ups blocked</div></div>
+    </section>
+    <section class="recent-heading"><strong>Recent blocked requests</strong><span>Latest 3</span></section>
+    <div id="recentAds" class="recent-list" aria-live="polite"></div>
+    <section class="ai-summary" aria-label="Explainable AI URL review">
+      <div class="ai-title"><strong>Explainable AI · URL review</strong><span>Experimental</span></div>
+      <div id="aiReview" class="ai-body">Visit a website to see its URL-pattern score.</div>
+    </section>
+    <button id="openHistoryBtn" class="history-btn">↗ &nbsp; Open Full Activity Log</button>
+    <p class="footnote">The rules block ads. AI scores URL patterns and explains its contributions; it does not verify malware.</p>
+  </main>
   <script src="popup.js"></script>
 </body>
 </html>
